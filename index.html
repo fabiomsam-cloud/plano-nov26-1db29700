@@ -318,7 +318,7 @@ footer{color:var(--muted);font-size:11.5px;margin-top:22px;text-align:center}
   </div>
   <div class="est-list" id="est-list"></div>
   <div class="vday" id="vday"></div>
-  <div class="note">Barra dourada = medido (líquido, caixa por data de pagamento, soma única). Barras do dia: verde = bateu a meta diária, dourado = abaixo, a de hoje é parcial; o risco escuro é a meta do dia. O plano não traz meta por dia: até 12/11 a meta do dia é o próprio realizado (o plano partiu dos números de 12/11) e de 13 a 30/11 os R$ 344 mil que faltam foram distribuídos assim: R$ 9,6 mil por dia de base (recorrência, vendedor, CS e orgânico) + o retorno dos webinários (R$ 70 mil em 18 dias) + o retorno do torra (R$ 102 mil de 23 a 30/11, com a Black Friday em dobro).</div>
+  <div class="note">Barra dourada = medido (líquido, caixa por data de pagamento, soma única). Barras do dia: verde = bateu a meta diária, dourado = abaixo, a de hoje é parcial; o risco escuro é a meta do dia. O plano não traz meta por dia: até 12/11 a meta do dia é o próprio realizado (o plano partiu dos números de 12/11) e de 13 a 30/11 os R$ 344 mil que faltam foram distribuídos assim: R$ 9,6 mil por dia de base (recorrência, vendedor, CS e orgânico) + o retorno dos webinários (R$ 70 mil em 18 dias) + o retorno do torra (R$ 102 mil de 23 a 30/11, com a Black Friday em dobro). <b>Meta de cada braço:</b> o plano só traz o número dos webinários e do torra; para os outros, somei o que o braço já tinha entregue até 12/11 com a parte dele nos dias que restam — recorrência pelo que entrou de 13 a 30 de outubro (R$ 69,1 mil) e os R$ 102,9 mil restantes repartidos na proporção do que cada braço entregou de 01 a 12/11. As cinco metas somam os R$ 523 mil.</div>
 </div>
 
 <div class="grid g-two">
@@ -453,6 +453,12 @@ const META = PLANO.fechamento, ESCALA = 600000;
 //    + torra de 23 a 30/11 (R$ 102 mil ÷ 8 dias; 27/11 em dobro, 28 e 29/11 pela metade)
 const META_DIA = [4554,7431,11804,10535,8955,5977,2867,1483,7350,82891,16036,19131,
                   12378, 13506,13506,13506,13506,13506,13506,13506,13506,13506, 26256,26256,26256,26256, 39006, 19881,19881, 26256];
+// Meta do mês por braço (soma = R$ 523 mil). O plano só dá número para os webinários (70 mil) e o torra (102 mil); o resto é derivado:
+//  · realizado de cada braço até 12/11 (tráfego 83.367 · recorrência 36.392 · comercial 22.697 · CS 8.216 · outros 28.344 = 179.015)
+//  · recorrência de 13 a 30/11 = R$ 69.078, o que entrou nos mesmos dias de outubro (parcelas vencem mais de 22 a 30)
+//  · os R$ 102.907 que sobram de 13 a 30/11 repartidos na proporção do que cada braço entregou de 01 a 12/11
+//    (tráfego fora das frentes 60.151 · comercial 16.374 · CS 5.932 · outros 20.450)
+const METAS_BRACO = { trafego: 83367 + 172000 + 60151, rec: 36392 + 69078, comercial: 22697 + 16374, cs: 8216 + 5932, outros: 28344 + 20450 };
 // Concursos da tabela de ROAS do mês (mesma régua do painel de outubro)
 const FRENTES_MES = ["PRF","TJAM","POLICIAS","SEDUC_AM","INSS","MANAUSPREV","SEMSA","DOMINEI","GERAL"];
 const NOME_MES = { PRF:"PRF", TJAM:"TJ-AM", POLICIAS:"Polícias AM (PC · PM · PP)", SEDUC_AM:"SEDUC-AM", INSS:"INSS", MANAUSPREV:"ManausPrev", SEMSA:"SEMSA-AM",
@@ -912,14 +918,15 @@ function renderTermometro(){
   // o que compõe o medido do mês (mesmas linhas do painel de outubro)
   const L = M.linhas;
   const row = (nome, med, obs, meta) => `<div class="er"><span>${nome} <span style="color:var(--muted)">· ${obs}</span></span><b>${fmtR(med)}${meta ? ` <span style="color:var(--muted);font-weight:400">de ${fmtR(meta)} (${fmtPct(pct(med, meta))})</span>` : ""}</b></div>`;
+  const MB = METAS_BRACO;
   $("est-list").innerHTML =
-      row("Entrega do tráfego (funil completo)", L.trafego, "webinário, Anne, blindado, ingresso, upsell + vendedor com lead que a Anne trabalhou")
+      row("Entrega do tráfego (funil completo)", L.trafego, "webinário, Anne, blindado, ingresso, upsell + vendedor com lead que a Anne trabalhou · meta = R$ 83,4 mil até 12/11 + R$ 172 mil das frentes + R$ 60,2 mil fora delas", MB.trafego)
     + row("Frentes do plano · webinários", C.comp.web, "de 13 a 30/11 · já dentro da entrega do tráfego", P.webTotal.retorno)
     + row("Frentes do plano · torra", C.comp.torra, "de 23 a 30/11 · já dentro da entrega do tráfego", P.torraTotal.retorno)
-    + row("Recorrência", L.rec, C.recN + " parcelas 2ª+ de vendas anteriores · R$ 31,6 mil em aberto em 12/11")
-    + row("Comercial fora do funil", L.comercial, "vendedor sem passagem pela Anne ou webinário + grupo")
-    + row("CS", L.cs, "renovação, upgrade e retenção")
-    + row("Outros", L.outros, "orgânico, YouTube, bio, Tríade e Dominei avulso, site sem campanha");
+    + row("Recorrência", L.rec, C.recN + " parcelas 2ª+ de vendas anteriores · meta = R$ 36,4 mil até 12/11 + R$ 69,1 mil de 13 a 30/11 no ritmo de outubro · R$ 31,6 mil em aberto em 12/11", MB.rec)
+    + row("Comercial fora do funil", L.comercial, "vendedor sem passagem pela Anne ou webinário + grupo · meta = R$ 22,7 mil até 12/11 + R$ 16,4 mil de 13 a 30/11", MB.comercial)
+    + row("CS", L.cs, "renovação, upgrade e retenção · meta = R$ 8,2 mil até 12/11 + R$ 5,9 mil de 13 a 30/11", MB.cs)
+    + row("Outros", L.outros, "orgânico, YouTube, bio, Tríade e Dominei avulso, site sem campanha · meta = R$ 28,3 mil até 12/11 + R$ 20,5 mil de 13 a 30/11", MB.outros);
 
   // barras do dia, com a meta diária
   const vd = C.vendasDia, dias = [];
@@ -1282,7 +1289,7 @@ function renderInsights(){
   else if (R.fechado){ const dif = R.medFech - R.metaFech, precisa = Math.max(META - C.medido, 0) / Math.max(restamMes, 1);
     ins(dif >= -1 ? "good" : R.razao >= 0.95 ? "warn" : "bad", "🎯", "Ritmo da meta",
       `Até ${ddmm(R.fechado)}: <b>${fmtK(R.medFech)}</b> medidos contra <b>${fmtK(R.metaFech)}</b> da meta acumulada (${Math.abs(dif) < 50 ? "no ritmo" : (dif>=0?"+":"") + fmtK(dif)}). Para fechar R$ 523 mil faltam <b>${fmtK(precisa)}/dia</b> nos ${restamMes} dias que restam, contando hoje — a média de 01 a 12/11 foi de R$ 14,9 mil por dia, puxada pelos R$ 82,9 mil do dia da live (10/11).${R.proj != null && R.diasPlano >= 3 ? ` No ritmo de 13/11 para cá o mês fecha em <b>${fmtK(R.proj)}</b>.` : ""}`); }
-  ins("info", "🧩", "De onde vem a receita", `Entrega do tráfego <b>${fmtK(M.linhas.trafego)}</b> · recorrência <b>${fmtK(M.linhas.rec)}</b> · comercial fora do funil ${fmtK(M.linhas.comercial)} · CS ${fmtK(M.linhas.cs)} · outros ${fmtK(M.linhas.outros)}. Das frentes do plano: webinários ${fmtR(C.comp.web)} de R$ 70 mil · torra ${fmtR(C.comp.torra)} de R$ 102 mil.`);
+  ins("info", "🧩", "De onde vem a receita", `Entrega do tráfego <b>${fmtK(M.linhas.trafego)}</b> de ${fmtK(METAS_BRACO.trafego)} · recorrência <b>${fmtK(M.linhas.rec)}</b> de ${fmtK(METAS_BRACO.rec)} · comercial fora do funil ${fmtK(M.linhas.comercial)} de ${fmtK(METAS_BRACO.comercial)} · CS ${fmtK(M.linhas.cs)} de ${fmtK(METAS_BRACO.cs)} · outros ${fmtK(M.linhas.outros)} de ${fmtK(METAS_BRACO.outros)}. Das frentes do plano: webinários ${fmtR(C.comp.web)} de R$ 70 mil · torra ${fmtR(C.comp.torra)} de R$ 102 mil.`);
   ins(M.T.roasFunil >= 2.6 ? "good" : M.T.roasFunil >= 1.8 ? "warn" : "bad", "📈", "ROAS do mês", `Regra do painel <b>${fmtX(M.T.roasPainel)}</b> · funil completo <b>${fmtX(M.T.roasFunil)}</b> sobre ${fmtR(M.T.custo)} investidos. O mês carrega os R$ 79,8 mil da Black não alunos; as frentes do plano (13 a 30/11) precisam devolver 6,18× para o retorno esperado de R$ 172 mil.`);
   // teto
   const fechaEm = T.ate12 + T.extra + T.periodo + Math.max(P.disponivel - C.prev.periodo, 0);
