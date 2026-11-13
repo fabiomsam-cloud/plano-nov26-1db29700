@@ -271,8 +271,8 @@ footer{color:var(--muted);font-size:11.5px;margin-top:22px;text-align:center}
 
 <header>
   <div class="brand">
-    <h1>PLANO NOVEMBRO · <em>teto R$ 110 mil</em></h1>
-    <div class="sub">Plano v3 da CEO (12/11) · já gasto até 12/11 <b>R$ 79.846</b> · disponível de 13 a 30/11 <b>R$ 30.154</b>: 4 webinários automáticos <b>R$ 14.873</b> + torra por concurso (23 a 30/11) <b>R$ 12.967</b> + reserva <b>R$ 2.314</b> · disparos <b>R$ 8.000</b> · retorno esperado <b>R$ 172 mil</b> em 176 vendas · novembro deve fechar perto de <b>R$ 523 mil</b></div>
+    <h1>PLANO NOVEMBRO · <em>R$ 523 mil</em></h1>
+    <div class="sub">Plano v3 da CEO (12/11) · 4 webinários automáticos de 13 a 30/11 e torra por concurso de 23 a 30/11 · retorno esperado das frentes <b>R$ 172 mil</b> em 176 vendas · teto de tráfego <b>R$ 110 mil</b> (já gasto até 12/11 R$ 79.846 + R$ 30.154 de 13 a 30/11: webinários 14.873 · torra 12.967 · reserva 2.314) · disparos <b>R$ 8.000</b></div>
   </div>
   <div class="stamp">
     <div class="clock" id="clock">—</div>
@@ -295,31 +295,30 @@ footer{color:var(--muted);font-size:11.5px;margin-top:22px;text-align:center}
 <!-- ============ 1 · TERMÔMETRO ============ -->
 <div class="card" style="margin-bottom:12px">
   <div class="card-head">
-    <div><h2>Termômetro do plano</h2>
-      <div class="hint">Primeira fileira: o dinheiro do tráfego (Meta com imposto + WhatsApp + Google) contra o teto do mês e contra os R$ 30.154 de 13 a 30/11 · segunda fileira: receita <b style="color:var(--ink-2)">líquida</b> (faturas pagas na Hubla <span class="badge-med">MEDIDO</span>) e o retorno das frentes do plano</div>
+    <div><h2>Termômetro da meta</h2>
+      <div class="hint">Receita <b style="color:var(--ink-2)">líquida</b> de novembro: faturas pagas na Hubla (vendas novas + recorrência) <span class="badge-med">MEDIDO</span> contra os R$ 523 mil que o plano prevê para o mês · segunda fileira: investimento do plano (Meta + imposto + WhatsApp + ligações), o que já saiu e o ROAS do mês</div>
     </div>
   </div>
   <div class="thermo-kpis">
-    <div class="tk inv"><div class="l">Teto de tráfego do mês</div><div class="v" id="k-teto">—</div><div class="s" id="k-teto-s">—</div></div>
-    <div class="tk inv"><div class="l">Já investido no mês</div><div class="v" id="k-gasto">—</div><div class="s" id="k-gasto-s">—</div></div>
-    <div class="tk inv"><div class="l">De 13 a 30/11 · plano R$ 30.154</div><div class="v" id="k-periodo">—</div><div class="s" id="k-periodo-s">—</div></div>
-    <div class="tk inv"><div class="l">Ritmo do gasto</div><div class="v" id="k-ritmo">—</div><div class="s" id="k-ritmo-s">—</div></div>
-  </div>
-  <div class="thermo-kpis" style="margin-top:-8px">
-    <div class="tk medido"><div class="l">Medido no mês (Hubla)</div><div class="v" id="t-medido">—</div><div class="s" id="t-medido-s">—</div></div>
+    <div class="tk medido"><div class="l">Medido (Hubla)</div><div class="v" id="t-medido">—</div><div class="s" id="t-medido-s">faturas pagas no mês</div></div>
+    <div class="tk"><div class="l" id="t-acum-l">Meta acumulada</div><div class="v" id="t-acum">—</div><div class="s" id="t-acum-s">—</div></div>
+    <div class="tk proj"><div class="l">Projeção no ritmo atual</div><div class="v" id="t-proj">—</div><div class="s" id="t-proj-s">—</div></div>
     <div class="tk"><div class="l">Falta p/ 523 mil</div><div class="v" id="t-falta">—</div><div class="s" id="t-pace">—</div></div>
-    <div class="tk proj"><div class="l">Retorno das frentes do plano</div><div class="v" id="t-ret">—</div><div class="s" id="t-ret-s">—</div></div>
-    <div class="tk"><div class="l">ROAS das frentes do plano</div><div class="v" id="t-roas">—</div><div class="s" id="t-roas-s">—</div></div>
   </div>
-  <div class="thermo" style="margin-top:42px">
+  <div class="thermo-kpis tk3">
+    <div class="tk inv"><div class="l">Investimento do plano</div><div class="v" id="t-inv-plano">—</div><div class="s" id="t-inv-plano-s">—</div></div>
+    <div class="tk inv"><div class="l">Já investido</div><div class="v" id="t-inv-gasto">—</div><div class="s" id="t-inv-gasto-s">—</div></div>
+    <div class="tk inv"><div class="l">ROAS total</div><div class="v" id="t-roas">—</div><div class="s" id="t-roas-s">—</div></div>
+  </div>
+  <div class="thermo" style="margin-top:50px">
     <div class="track" id="thermo-track">
       <div class="fill" id="th-fill"></div>
     </div>
-    <div class="thermo-scale"><span>R$ 0</span><span>R$ 27,5k</span><span>R$ 55k</span><span>R$ 82,5k</span><span>R$ 110k</span></div>
+    <div class="thermo-scale"><span>R$ 0</span><span>R$ 150k</span><span>R$ 300k</span><span>R$ 450k</span><span>R$ 600k</span></div>
   </div>
   <div class="est-list" id="est-list"></div>
   <div class="vday" id="vday"></div>
-  <div class="note">Barra dourada = tráfego já investido no mês contra o teto de R$ 110 mil; o risco escuro marca o que o plano previa ter gasto até hoje. Barras do dia = receita líquida por dia de pagamento (a de hoje é parcial).</div>
+  <div class="note">Barra dourada = medido (líquido, caixa por data de pagamento, soma única). Barras do dia: verde = bateu a meta diária, dourado = abaixo, a de hoje é parcial; o risco escuro é a meta do dia. O plano não traz meta por dia: até 12/11 a meta do dia é o próprio realizado (o plano partiu dos números de 12/11) e de 13 a 30/11 os R$ 344 mil que faltam foram distribuídos assim: R$ 9,6 mil por dia de base (recorrência, vendedor, CS e orgânico) + o retorno dos webinários (R$ 70 mil em 18 dias) + o retorno do torra (R$ 102 mil de 23 a 30/11, com a Black Friday em dobro).</div>
 </div>
 
 <div class="grid g-two">
@@ -340,7 +339,7 @@ footer{color:var(--muted);font-size:11.5px;margin-top:22px;text-align:center}
   <!-- ============ 3 · ALERTAS ============ -->
   <div class="card">
     <div class="card-head">
-      <div><h2>Alertas</h2><div class="hint">Réguas do plano: teto, verba diária, custo máximo por venda, disparos e campanhas fora do plano</div></div>
+      <div><h2>Alertas</h2><div class="hint">Réguas do plano: meta acumulada, teto de verba, verba diária, custo máximo por venda, WhatsApp e campanhas fora do plano</div></div>
     </div>
     <div id="alertas"></div>
     <div class="note">Regra de realocação: funil acima do custo máximo por venda por 3 dias seguidos perde R$ 30/dia para o funil mais barato. No torra, o que for cortado vai para PRF ou TJ-AM.</div>
@@ -356,17 +355,26 @@ footer{color:var(--muted);font-size:11.5px;margin-top:22px;text-align:center}
   <div class="ins" id="insights"></div>
 </div>
 
-<!-- ============ 5 · WEBINÁRIOS ============ -->
+<!-- ============ 5 · ROAS ============ -->
 <div class="card" style="margin-bottom:12px">
   <div class="card-head">
-    <div><h2>Webinários automáticos · 4 funis</h2>
-      <div class="hint">De 13 a 30/11 (TJ-AM de 14 a 30/11) · mídia com imposto + disparo contra o plano · vendas com a marcação do webinário contra a meta por dia · custo por venda contra o máximo do plano</div></div>
+    <div><h2>ROAS · três leituras</h2>
+      <div class="hint">Do mês pela regra do painel, do mês pelo funil completo e das frentes do plano de 13 a 30/11 · por concurso, lado a lado, sem esconder os piores · custo = Meta × 1,1383 + WhatsApp (template R$ 0,35 · resposta R$ 0,05)</div></div>
+  </div>
+  <div id="roas"></div>
+</div>
+
+<!-- ============ 6 · WEBINÁRIOS ============ -->
+<div class="card" style="margin-bottom:12px">
+  <div class="card-head">
+    <div><h2>Fase 3 · link do webinário</h2>
+      <div class="hint">Os 4 webinários automáticos do plano, de 13 a 30/11 (TJ-AM de 14 a 30/11) · leads da plataforma, presença, pitch, checkout e vendas com a marcação do webinário · custo por lead = campanha [WEB] com imposto ÷ cadastros reais · CAC contra o custo máximo por venda do plano</div></div>
   </div>
   <div id="web"></div>
 </div>
 <div class="grid g-fun" id="funis"></div>
 
-<!-- ============ 6 · TORRA ============ -->
+<!-- ============ 7 · TORRA (venda direta) ============ -->
 <div class="card" style="margin-bottom:12px">
   <div class="card-head">
     <div><h2>Torra · venda direta por concurso</h2>
@@ -375,10 +383,10 @@ footer{color:var(--muted);font-size:11.5px;margin-top:22px;text-align:center}
   <div id="torra"></div>
 </div>
 
-<!-- ============ 7 · CALENDÁRIO ============ -->
+<!-- ============ 8 · CALENDÁRIO ============ -->
 <div class="card" style="margin-bottom:12px">
   <div class="card-head">
-    <div><h2>Calendário do plano</h2><div class="hint">Marcos do plano v3 e as vendas que não dependem de mídia — status automático pelo dia (Manaus)</div></div>
+    <div><h2>Calendário do mês</h2><div class="hint">Marcos do plano v3 e as vendas que não dependem de mídia — status automático pelo dia (Manaus)</div></div>
   </div>
   <div class="cal" id="cal"></div>
 </div>
@@ -438,6 +446,19 @@ const PLANO = {
   torraTotal: { midia:7467, disparo:5500, disparoPRF:2000, total:12967, vendas:113, retorno:102000, vendasDia:14.2, vendasDiaDisparo:8.2, diaria:820 },
 };
 const WEBS = Object.keys(PLANO.web), TORRAS = Object.keys(PLANO.torra);
+const META = PLANO.fechamento, ESCALA = 600000;
+// Meta diária de venda (líquida) para fechar R$ 523 mil. O plano não traz meta por dia:
+//  · 01 a 12/11 = o realizado de cada dia (o plano partiu dos números de 12/11: R$ 179.014 medidos)
+//  · 13 a 30/11 = R$ 9.555/dia de base (recorrência, vendedor, CS, orgânico) + webinários (R$ 70 mil ÷ 62 vendas-dia: 13/11 sem o TJ-AM)
+//    + torra de 23 a 30/11 (R$ 102 mil ÷ 8 dias; 27/11 em dobro, 28 e 29/11 pela metade)
+const META_DIA = [4554,7431,11804,10535,8955,5977,2867,1483,7350,82891,16036,19131,
+                  12378, 13506,13506,13506,13506,13506,13506,13506,13506,13506, 26256,26256,26256,26256, 39006, 19881,19881, 26256];
+// Concursos da tabela de ROAS do mês (mesma régua do painel de outubro)
+const FRENTES_MES = ["PRF","TJAM","POLICIAS","SEDUC_AM","INSS","MANAUSPREV","SEMSA","DOMINEI","GERAL"];
+const NOME_MES = { PRF:"PRF", TJAM:"TJ-AM", POLICIAS:"Polícias AM (PC · PM · PP)", SEDUC_AM:"SEDUC-AM", INSS:"INSS", MANAUSPREV:"ManausPrev", SEMSA:"SEMSA-AM",
+                   DOMINEI:"Dominei avulso e Tríade", GERAL:"Black geral · sem concurso" };
+const CANAIS_TRAFEGO = ["web","anne","site","ingresso","pp","upsell"];
+const ROAS_MIN_CUSTO = 100;   // abaixo disso o ROAS do concurso não é leitura (aparece "—")
 // Black Friday (27/11): torra em dobro; 28 e 29/11 pela metade — o total dos 8 dias não muda
 const pesoTorra = dia => dia < PLANO.torraIni || dia > PLANO.torraFim ? 0 : dia === "2026-11-27" ? 2 : (dia === "2026-11-28" || dia === "2026-11-29") ? 0.5 : 1;
 
@@ -483,6 +504,7 @@ const diaMais = (iso, n) => new Date(Date.parse(iso) + n * 86400e3).toISOString(
 const ontemManaus = () => diaMais(hojeManaus(), -1);
 const diasEntre = (a, b) => Math.max(0, Math.round((Date.parse(b) - Date.parse(a)) / 86400e3) + 1);
 const ddmm = iso => iso.slice(8,10) + "/" + iso.slice(5,7);
+const diaIdx = iso => Number(iso.slice(8,10)) - 1;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const soma = o => Object.values(o||{}).reduce((a,v)=>a+v,0);
 const add = (o, k, v) => { o[k] = (o[k]||0) + v; };
@@ -561,6 +583,48 @@ function vendaTorra(v){
   const k = torraKey(v.p);
   return k && PLANO.torra[k] ? k : null;
 }
+
+/* ---- régua do mês (igual à de outubro): concurso da campanha, da mensagem e da venda; canal da venda ---- */
+function concursoDe(txt){
+  const n = (txt||"").toUpperCase().replace(/_/g," ");
+  if (/MANAUS[\s-]?PREV/.test(n)) return "MANAUSPREV";
+  if (/TJ[\s-]?AM|TRIBUNA/.test(n)) return "TJAM";
+  if (/SEDUC[\s-]?AM/.test(n)) return "SEDUC_AM";
+  if (/SEMSA/.test(n)) return "SEMSA";
+  if (/INSS/.test(n)) return "INSS";
+  if (/PRF/.test(n)) return "PRF";
+  if (/POL[IÍ]CIA|POLICIAS|PC[\s-]?AM|PM[\s-]?AM/.test(n)) return "POLICIAS";
+  return null;
+}
+// campanha da Meta e mensagem do WhatsApp: concurso pelo nome; Dominei avulso/Tríade só quando é a ação própria deles
+const frenteMes = txt => concursoDe(txt) || (/\[DOMINEI|DOMINEI[\s_]?(AVULSO|POPUP)|TR[IÍ]ADE/i.test(txt||"") ? "DOMINEI" : "GERAL");
+function frenteMsg(w, nomes){
+  const txt = w.origem === "disparo" ? ((nomes[w.campaign_id]||"") + " " + (w.agent_slug||"")) : ((w.agent_slug||"") + " " + (w.template||""));
+  return frenteMes(txt);
+}
+const ehPos = p => /P[ÓO]S[\s-]|P[ÓO]S GRADUA|GRADUA[ÇC][ÃA]O/.test((p||"").toUpperCase());
+// venda: concurso pelo produto (mentoria + Dominei conta no concurso); Pós herda o concurso do Elite comprado nos 7 dias antes
+function concursoVenda(v){
+  if (ehPos(v.p)) return (v.e7 && concursoDe(v.e7)) || "GERAL";
+  return concursoDe(v.p) || (/^\s*DOMINEI|TR[IÍ]ADE/i.test(v.p||"") ? "DOMINEI" : "GERAL");
+}
+// canal pela marcação do checkout — tráfego (regra do painel) = web · anne · site · ingresso · pp · upsell | vendedor · grupo · cs · outros
+function canalVenda(v){
+  const p = (v.p||"").toUpperCase(), s = (v.us||"").toLowerCase().trim(), c = (v.uc||"").toLowerCase(), m = (v.um||"").toLowerCase();
+  if (v.rec) return "rec";
+  if (/RENOVA/.test(p) || /renova/.test(c)) return "cs";
+  if (/PROFISS[AÃ]O PRF/.test(p)) return "ingresso";
+  if (/PLAY ?PASSEI|SOU QUEST/.test(p)) return (s === "fb" || s === "ig" || /pago|cpc/.test(m)) ? "pp" : "outros";
+  if (/^upsell/.test(s) || (ehPos(p) && v.e7)) return "upsell";
+  if (/webin|webnario/.test(s + " " + c)) return "web";
+  if (/anne/.test(s)) return "anne";
+  if (/customer-success/.test(s)) return "cs";
+  if (/inside-sales|ataque|unnichat|vendedor/.test(s) || s === "whatsapp") return "vendedor";
+  if (/grupo/.test(s)) return "grupo";
+  if (/^site/.test(s) || s === "pagina-vendas" || s === "fb" || s === "ig" || s === "facebook") return "site";
+  return "outros";
+}
+const tocado = v => v.a || v.w || v.pa;     // comprador falou com a Anne ou foi lead de webinário/página nos 30 dias antes
 
 /* ================= PLANO: previsto até hoje (valores com imposto) ================= */
 const diasWeb = (k, ate) => { const w = PLANO.web[k]; return ate < w.ini ? 0 : diasEntre(w.ini, ate > MES_FIM ? MES_FIM : ate); };
@@ -695,6 +759,30 @@ function calcular(d){
     }
   }
 
+  // ---- mês inteiro por concurso (mesma régua do painel de outubro): custo, retorno do painel e funil completo
+  const M = { meta:{}, wa:{}, porFr:{}, linhas:{ trafego:0, rec:0, comercial:0, cs:0, outros:0 } };
+  for (const r of (d.meta_spend||[])){ const v = Number(r.spend||0); if (v) add(M.meta, frenteMes(r.campaign_name), v); }
+  for (const w of (d.whatsapp||[])) add(M.wa, frenteMsg(w, nomes), Number(w.n||0) * (w.tipo === "template" ? TARIFA_TPL : TARIFA_RESP));
+  for (const v of (d.vendas||[])){
+    const canal = canalVenda(v), fr = concursoVenda(v), chave = canal === "vendedor" ? (tocado(v) ? "vendFunil" : "vendFora") : canal;
+    const c = ((M.porFr[fr] ??= {})[chave] ??= { n:0, net:0 }); c.n++; c.net += v.net;
+    if (canal === "rec") M.linhas.rec += v.net;
+    else if (CANAIS_TRAFEGO.includes(canal) || chave === "vendFunil") M.linhas.trafego += v.net;
+    else if (chave === "vendFora" || canal === "grupo") M.linhas.comercial += v.net;
+    else if (canal === "cs") M.linhas.cs += v.net;
+    else M.linhas.outros += v.net;
+  }
+  const mNet = (fr, c) => M.porFr[fr]?.[c]?.net || 0, mQtd = (fr, c) => M.porFr[fr]?.[c]?.n || 0;
+  M.roas = FRENTES_MES.map(fr => {
+    const metaImp = (M.meta[fr]||0) * (1 + IMPOSTO), wa = M.wa[fr]||0, google = fr === "GERAL" ? (GOOGLE.valor||0) + (LIGUE_LEAD.valor||0) : 0;
+    const custo = metaImp + wa + google, ret = CANAIS_TRAFEGO.reduce((a,c) => a + mNet(fr, c), 0), vend = mNet(fr, "vendFunil");
+    return { fr, metaImp, wa, google, custo, ret, vend, web: mNet(fr,"web"), anne: mNet(fr,"anne"), site: mNet(fr,"site"),
+      outrosTraf: mNet(fr,"ingresso") + mNet(fr,"pp") + mNet(fr,"upsell"), nVend: mQtd(fr,"vendFunil"),
+      roasPainel: custo >= ROAS_MIN_CUSTO ? ret / custo : null, roasFunil: custo >= ROAS_MIN_CUSTO ? (ret + vend) / custo : null };
+  });
+  M.T = M.roas.reduce((a,r) => ({ metaImp:a.metaImp+r.metaImp, wa:a.wa+r.wa, google:a.google+r.google, custo:a.custo+r.custo, ret:a.ret+r.ret, vend:a.vend+r.vend }), { metaImp:0, wa:0, google:0, custo:0, ret:0, vend:0 });
+  M.T.roasPainel = M.T.custo > 0 ? M.T.ret / M.T.custo : null; M.T.roasFunil = M.T.custo > 0 ? (M.T.ret + M.T.vend) / M.T.custo : null;
+
   // ---- leads do webinário (plataforma) desde o início de cada funil
   const funil = {};
   for (const [code, dias] of Object.entries(d.funil_dia||{})){
@@ -741,7 +829,7 @@ function calcular(d){
   prev.reserva = PLANO.reserva * fracPeriodo(PLANO_INI, MES_FIM, hoje);
   prev.periodo = prev.web + prev.torra + prev.reserva;
 
-  return { hoje, web, torra, ate12, fora, per, rodando, nomes, vendasDia, medido, nFat, rec, recN, comp, outras, funil, T, prev, custoWeb, custoTorra, orc };
+  return { hoje, web, torra, ate12, fora, per, rodando, nomes, vendasDia, medido, nFat, rec, recN, comp, outras, funil, T, prev, custoWeb, custoTorra, orc, M };
 }
 
 /* ================= RENDER ================= */
@@ -751,6 +839,7 @@ function renderAll(){
   seguro("est-list", renderTermometro);
   seguro("verba", renderVerba);
   seguro("insights", renderInsights);
+  seguro("roas", renderRoas);
   seguro("web", renderWeb);
   seguro("torra", renderTorra);
   seguro("gasto", renderGasto);
@@ -758,65 +847,137 @@ function renderAll(){
 }
 const mesFechado = () => Date.now() > FIM_PLANO_MS;
 
+// meta acumulada do mês de 01/11 até o dia (inclusive)
+const metaAte = dia => dia < MES_INI ? 0 : META_DIA.slice(0, diaIdx(dia) + 1).reduce((a,b)=>a+b,0);
+function ritmo(){
+  const hoje = C.hoje, fechado = hoje > MES_INI ? ontemManaus() : null;
+  const ate = lim => Object.entries(C.vendasDia).filter(([d]) => d <= lim).reduce((a,[,x]) => a + x.net, 0);
+  const medFech = fechado ? ate(fechado) : 0, metaFech = fechado ? metaAte(fechado) : 0;
+  // desempenho desde o início do plano (13/11): só vira fator de projeção com 3 dias fechados
+  const diasPlano = fechado && fechado >= PLANO_INI ? diasEntre(PLANO_INI, fechado) : 0;
+  const med13 = diasPlano ? medFech - ate("2026-11-12") : 0, meta13 = diasPlano ? metaFech - metaAte("2026-11-12") : 0;
+  const fator = diasPlano >= 3 && meta13 > 0 ? med13 / meta13 : 1;
+  const resto = META_DIA.slice(diaIdx(hoje)).reduce((a,b)=>a+b,0);
+  return { hoje, fechado, medFech, metaFech, diasPlano, fator, razao: metaFech > 0 ? medFech / metaFech : null, proj: fechado ? medFech + resto * fator : null };
+}
+
 /* ---- 1 · termômetro ---- */
 function renderTermometro(){
-  const T = C.T, P = PLANO, hoje = C.hoje, diaN = Number(hoje.slice(8,10)), restam = DIAS_MES - diaN + 1;
-  // tráfego
-  $("k-teto").textContent = fmtK(P.teto);
-  $("k-teto-s").textContent = "mídia + imposto + disparo + ligações · plano " + P.versao;
-  $("k-gasto").textContent = fmtR(T.mes);
-  $("k-gasto").style.color = T.mes > P.teto ? "var(--red)" : "";
-  $("k-gasto-s").innerHTML = "<b style=\"color:var(--ink-2)\">" + (T.mes/P.teto*100).toLocaleString("pt-BR",{maximumFractionDigits:1}) + "% do teto</b> · até 12/11 " + fmtR(T.ate12) + " (plano " + fmtR(P.gastoAte12) + ") · desde 13/11 " + fmtR(T.periodo) + (T.extra ? " · Google " + fmtR(GOOGLE.valor||0) : "") + " · resta " + fmtR(P.teto - T.mes);
-  $("k-periodo").textContent = fmtR(T.periodo);
-  $("k-periodo-s").innerHTML = "webinários " + fmtR(T.web) + " · torra " + fmtR(T.torra) + " · reserva " + fmtR(T.reserva) + (T.fora > 0.5 ? " · <b style=\"color:var(--red)\">fora do plano " + fmtR(T.fora) + "</b>" : "") + " · resta " + fmtR(P.disponivel - T.periodo);
-  const dif = T.periodo - C.prev.periodo;
-  const parcial = !mesFechado();
-  $("k-ritmo").textContent = Math.abs(dif) < 1 ? "no plano" : (dif > 0 ? "+" : "−") + "R$ " + fmtN(Math.abs(dif));
-  $("k-ritmo").style.color = dif > C.prev.periodo * 0.10 && dif > 50 ? "var(--red)" : dif < -C.prev.periodo * 0.15 ? "var(--amber)" : "var(--green)";
-  $("k-ritmo-s").textContent = (dif > 0 ? "acima" : "abaixo") + " do previsto até hoje (" + fmtR(C.prev.periodo) + ", contando o dia de hoje inteiro)" + (parcial ? " · hoje ainda é parcial" : "");
-  // receita
-  $("t-medido").textContent = fmtK(C.medido);
-  $("t-medido-s").textContent = "novas " + fmtK(C.medido - C.rec) + " + recorrência " + fmtK(C.rec) + " · " + Math.round(C.medido/P.fechamento*100) + "% dos R$ 523 mil";
-  $("t-falta").textContent = fmtK(Math.max(P.fechamento - C.medido, 0));
-  $("t-pace").textContent = "dia " + diaN + " de 30 · precisa de " + fmtK(Math.max(P.fechamento - C.medido, 0) / Math.max(restam, 1)) + "/dia contando hoje · média do mês até ontem " + fmtK(diaN > 1 ? Object.entries(C.vendasDia).filter(([d]) => d < hoje).reduce((a,[,x]) => a + x.net, 0) / (diaN - 1) : 0) + "/dia";
-  $("t-ret").textContent = fmtR(T.retPlano);
-  $("t-ret-s").textContent = T.vendasPlano + " de " + P.vendas + " vendas · " + fmtPct(pct(T.retPlano, P.retorno)) + " dos R$ 172 mil esperados (webinários " + fmtR(T.webRet) + " de 70 mil · torra " + fmtR(T.torraRet) + " de 102 mil)";
-  const rz = T.custoPlano >= 500 ? T.retPlano / T.custoPlano : null;
-  $("t-roas").textContent = fmtX(rz);
-  $("t-roas").style.color = rz == null ? "" : rz >= P.retorno / P.disponivel ? "var(--green)" : rz >= 2.5 ? "var(--amber)" : "var(--red)";
-  $("t-roas-s").textContent = (rz == null ? "aparece com R$ 500 ou mais de gasto · " : "") + "retorno ÷ gasto de webinários e torra desde 13/11 (" + fmtR(T.custoPlano) + ") · o plano espera " + fmtX(P.retorno / (P.webTotal.total + P.torraTotal.total)) + " (R$ 172 mil sobre R$ 27,8 mil)";
+  const R = ritmo(), hoje = R.hoje, diaN = diaIdx(hoje) + 1, T = C.T, P = PLANO, M = C.M;
+  const rec = C.rec, medido = C.medido;
+  $("t-medido").textContent = fmtK(medido);
+  $("t-medido-s").textContent = "novas " + fmtK(medido - rec) + " + recorrência " + fmtK(rec) + " · " + Math.round(medido/META*100) + "% da meta";
+  if (R.fechado){
+    const dif = R.medFech - R.metaFech;
+    $("t-acum-l").textContent = "Meta acumulada até " + ddmm(R.fechado);
+    $("t-acum").textContent = fmtK(R.metaFech);
+    $("t-acum-s").innerHTML = "medido até lá " + fmtK(R.medFech) + (Math.abs(dif) < 50 ? " · <b style=\"color:var(--green)\">no ritmo</b>" : " · <b style=\"color:" + (dif >= 0 ? "var(--green)" : "var(--red)") + "\">" + (dif >= 0 ? "+" : "") + fmtK(dif) + "</b>") + (R.fechado <= "2026-11-12" ? " · até 12/11 a meta é o próprio realizado" : "");
+  } else {
+    $("t-acum-l").textContent = "Meta de hoje (" + ddmm(hoje) + ")";
+    $("t-acum").textContent = fmtK(META_DIA[0]);
+    $("t-acum-s").textContent = "1º dia do mês";
+  }
+  $("t-proj").textContent = R.proj == null ? "—" : fmtK(R.proj);
+  $("t-proj-s").textContent = R.proj == null ? "—"
+    : R.diasPlano >= 3 ? "medido até ontem + dias que restam no ritmo de 13/11 para cá (" + Math.round(R.fator*100) + "% da meta do período)"
+    : "medido até ontem + plano cumprido nos dias que restam · o ritmo real entra na conta com 3 dias fechados do plano";
+  const restam = DIAS_MES - diaN + 1;
+  $("t-falta").textContent = fmtK(Math.max(META - medido, 0));
+  $("t-pace").textContent = "dia " + diaN + " de 30 · precisa de " + fmtK(Math.max(META - medido, 0) / Math.max(restam, 1)) + "/dia contando hoje";
 
-  // barra: tráfego investido × teto, com o previsto até hoje
+  // investimento: teto do plano (Meta + imposto + WhatsApp + ligações) × já gasto × ROAS do mês
+  const metaMes = M.T.metaImp, waMes = M.T.wa, prevMes = P.gastoAte12 + C.prev.periodo;
+  $("t-inv-plano").textContent = fmtK(P.teto);
+  $("t-inv-plano-s").textContent = "já gasto até 12/11 " + fmtK(P.gastoAte12) + " + de 13 a 30/11 " + fmtK(P.disponivel) + " (webinários " + fmtK(P.webTotal.total) + " · torra " + fmtK(P.torraTotal.total) + " · reserva " + fmtK(P.reserva) + ")";
+  $("t-inv-gasto").textContent = fmtR(T.mes);
+  $("t-inv-gasto").style.color = T.mes > P.teto ? "var(--red)" : "";
+  $("t-inv-gasto-s").innerHTML = "Meta com imposto " + fmtR(metaMes) + " + WhatsApp " + fmtR(waMes) + (M.T.google ? " + Google " + fmtR(M.T.google) : "") + " · <b style=\"color:" + (T.mes > P.teto ? "var(--red)" : "var(--ink-2)") + "\">" + (T.mes/P.teto*100).toLocaleString("pt-BR",{maximumFractionDigits:1}) + "% do plano</b> · previsto até hoje " + fmtR(prevMes) + " · resta " + fmtR(P.teto - T.mes);
+  const rz = M.T.custo >= ROAS_MIN_CUSTO ? M.T.roasFunil : null;
+  const rzPlano = T.custoPlano >= 500 ? T.retPlano / T.custoPlano : null;
+  $("t-roas").textContent = fmtX(rz);
+  $("t-roas").style.color = rz == null ? "" : rz >= 2.6 ? "var(--green)" : rz >= 1.8 ? "var(--amber)" : "var(--red)";
+  $("t-roas-s").textContent = "retorno do tráfego " + fmtR(M.T.ret + M.T.vend) + " ÷ investido no mês (funil completo) · regra do painel " + fmtX(M.T.custo >= ROAS_MIN_CUSTO ? M.T.roasPainel : null) + " · frentes do plano desde 13/11 " + fmtX(rzPlano) + " (o plano espera 6,18×)";
+
   const track = $("thermo-track");
-  $("th-fill").style.width = Math.min(T.mes/P.teto*100, 100) + "%";
-  $("th-fill").style.background = T.mes > P.teto ? "var(--red)" : "";
+  $("th-fill").style.width = Math.min(medido/ESCALA*100, 100) + "%";
   track.querySelectorAll(".mark,.mlab").forEach(el=>el.remove());
-  const prevMes = P.gastoAte12 + C.prev.periodo;
-  for (const [v,l,cls,pos] of [[P.gastoAte12,"79,8k · gasto até 12/11","","left:"+(P.gastoAte12/P.teto*100)+"%;transform:translateX(-100%);padding-right:6px"],
-                               [prevMes,fmtK(prevMes).replace("R$ ","")+" · previsto até hoje","meta","left:"+(prevMes/P.teto*100)+"%;top:-42px"],
-                               [P.teto,"110k · TETO","","left:auto;right:0;transform:none"]]){
-    const x = Math.min(v/P.teto*100, 100);
+  const mh = metaAte(hoje);
+  for (const [v,l,cls,pos] of [[mh, fmtK(mh).replace("R$ ","") + " · meta até hoje", "", "left:"+(mh/ESCALA*100)+"%;transform:translateX(-100%);padding-right:6px"],
+                               [META, "523k · META", "meta", "left:"+(META/ESCALA*100)+"%;top:-42px"]]){
+    const x = v/ESCALA*100;
     track.insertAdjacentHTML("beforeend",
       `<div class="mark ${cls}" style="left:${x}%"></div><div class="mlab ${cls}" style="${pos}"><b>${l.split(" · ")[0]}</b> ${l.split(" · ")[1]}</div>`);
   }
 
-  // de onde vem a receita do mês
-  const L = C.comp;
-  const row = (nome, med, obs, meta) => `<div class="er"><span>${nome} <span style="color:var(--muted)">· ${obs}</span></span><b>${fmtR(med)}${meta?` <span style="color:var(--muted);font-weight:400">de ${fmtR(meta)} (${fmtPct(pct(med, meta))})</span>`:""}</b></div>`;
+  // o que compõe o medido do mês (mesmas linhas do painel de outubro)
+  const L = M.linhas;
+  const row = (nome, med, obs, meta) => `<div class="er"><span>${nome} <span style="color:var(--muted)">· ${obs}</span></span><b>${fmtR(med)}${meta ? ` <span style="color:var(--muted);font-weight:400">de ${fmtR(meta)} (${fmtPct(pct(med, meta))})</span>` : ""}</b></div>`;
   $("est-list").innerHTML =
-      row("Webinários automáticos (13 a 30/11)", L.web, "vendas com a marcação do webinário dos 4 funis", P.webTotal.retorno)
-    + row("Torra (23 a 30/11)", L.torra, "mentorias com preço de Black, sem o Dominei", P.torraTotal.retorno)
-    + row("Vendedor", L.vendedor, "Black não alunos, ataque e inside sales no mês")
-    + row("Recorrência", L.rec, C.recN + " parcelas 2ª+ pagas no mês · R$ 31,6 mil em aberto em 12/11")
-    + row("CS", L.cs, "renovação e customer success")
-    + row("Outros", L.outros, "orgânico, site, YouTube, Tríade, Dominei avulso, ingresso PRF");
+      row("Entrega do tráfego (funil completo)", L.trafego, "webinário, Anne, blindado, ingresso, upsell + vendedor com lead que a Anne trabalhou")
+    + row("Frentes do plano · webinários", C.comp.web, "de 13 a 30/11 · já dentro da entrega do tráfego", P.webTotal.retorno)
+    + row("Frentes do plano · torra", C.comp.torra, "de 23 a 30/11 · já dentro da entrega do tráfego", P.torraTotal.retorno)
+    + row("Recorrência", L.rec, C.recN + " parcelas 2ª+ de vendas anteriores · R$ 31,6 mil em aberto em 12/11")
+    + row("Comercial fora do funil", L.comercial, "vendedor sem passagem pela Anne ou webinário + grupo")
+    + row("CS", L.cs, "renovação, upgrade e retenção")
+    + row("Outros", L.outros, "orgânico, YouTube, bio, Tríade e Dominei avulso, site sem campanha");
 
-  // barras do dia (receita)
+  // barras do dia, com a meta diária
   const vd = C.vendasDia, dias = [];
   for (let d = MES_INI; d <= hoje; d = diaMais(d, 1)) dias.push(d);
-  const max = Math.max(...dias.map(d => vd[d]?.net||0), 1);
-  $("vday").innerHTML = dias.map(d => { const v = vd[d]?.net||0, parc = d === hoje && !mesFechado();
-    return `<div class="vb" title="${ddmm(d)} · ${fmtR(v)}"><span class="dv">${fmtK(v)}</span><div class="bar" style="height:${Math.max(v/max*52,2)}px;opacity:${parc?.5:.9}${d>=PLANO_INI?"":";background:#cbd5e1"}"></div><span class="dl">${ddmm(d)}</span></div>`; }).join("");
+  const max = Math.max(...dias.map(d => Math.max(vd[d]?.net||0, META_DIA[diaIdx(d)])), 1);
+  $("vday").style.height = "92px";
+  $("vday").innerHTML = dias.map(d => { const v = vd[d]?.net||0, m = META_DIA[diaIdx(d)], ok = v >= m - 1, parcial = d === hoje && !mesFechado();
+    return `<div class="vb" title="${ddmm(d)} · medido ${fmtR(v)} · meta ${fmtR(m)}"><span class="dv">${fmtK(v)}</span>
+      <div style="position:relative;width:100%;max-width:34px;height:${Math.max(Math.max(v,m)/max*56,3)}px;display:flex;align-items:flex-end">
+        <div class="bar" style="height:${v/Math.max(v,m,1)*100}%;width:100%;max-width:none;background:${ok?"var(--green)":"var(--gold)"};opacity:${parcial?.55:.9}"></div>
+        <div style="position:absolute;left:-2px;right:-2px;bottom:${m/Math.max(v,m,1)*100}%;border-top:2px solid rgba(15,23,42,.6)"></div></div>
+      <span class="dl">${ddmm(d)}</span></div>`; }).join("");
+}
+
+/* ---- 5 · ROAS ---- */
+function renderRoas(){
+  const P = PLANO, T = C.T, M = C.M, hoje = C.hoje;
+  const cls = (v, ok, stop) => v == null ? "" : v >= ok ? "ok" : v >= stop ? "mid" : "bad";
+  const pill = (l, v, s, c) => `<div class="pill ${c||""}" style="flex:1;min-width:190px">${l}<b>${v}</b><span style="font-size:11px">${s}</span></div>`;
+  const rzPlano = T.custoPlano >= 500 ? T.retPlano / T.custoPlano : null, alvo = P.retorno / (P.webTotal.total + P.torraTotal.total);
+  let h = `<div class="cpl" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+    ${pill("ROAS do mês · regra do painel", fmtX(M.T.roasPainel), `${fmtR(M.T.ret)} sobre ${fmtR(M.T.custo)} · vendas com marcação de webinário, Anne, site e upsell`, cls(M.T.roasPainel, 2.2, 1.5))}
+    ${pill("ROAS do mês · funil completo", fmtX(M.T.roasFunil), `+ ${fmtR(M.T.vend)} do vendedor com lead trabalhado · alvo da casa 2,6× a 3×`, cls(M.T.roasFunil, 2.6, 1.8))}
+    ${pill("Frentes do plano · 13 a 30/11", fmtX(rzPlano), `${fmtR(T.retPlano)} sobre ${fmtR(T.custoPlano)} · o plano espera ${fmtX(alvo)} (R$ 172 mil sobre R$ 27,8 mil)${rzPlano == null ? " · aparece com R$ 500 de gasto" : ""}`, cls(rzPlano, alvo, 2.6))}
+  </div>`;
+
+  // por concurso (mês)
+  h += `<div class="rs-h"><h3>ROAS por concurso</h3><span>mês inteiro, de 01/11 até agora · retorno do painel = vendas novas com marcação de webinário, Anne, site (blindado), ingresso e upsell da Pós · "+ vendedor" = venda do vendedor cujo comprador falou com a Anne ou foi lead de webinário ou página nos 30 dias antes</span></div>
+    <div class="rs-wrap"><table class="rs"><tr><th>Concurso</th><th>Meta + 13,83%</th><th>WhatsApp</th><th>Custo total</th><th>Webinário</th><th>Anne</th><th>Site</th><th>Retorno painel</th><th>+ vendedor</th><th>ROAS painel</th><th>ROAS funil</th></tr>`;
+  for (const r of M.roas){
+    if (r.custo < 0.5 && r.ret + r.vend < 0.5) continue;
+    const extra = r.outrosTraf > 0 ? ` <small>(+ ${fmtR(r.outrosTraf)} ${r.fr==="PRF"?"ingresso/upsell":"upsell"})</small>` : "";
+    const obs = r.fr === "GERAL" ? `<br><small>campanhas e disparos da Black sem concurso no nome${r.google ? " · inclui Google " + fmtR(r.google) : ""} · quem compra entra no concurso da mentoria</small>` : r.fr === "DOMINEI" ? `<br><small>ações próprias do Dominei avulso e da Tríade</small>` : "";
+    const lido = r.fr !== "GERAL";
+    h += `<tr><td>${esc(NOME_MES[r.fr])}${obs}</td>
+      <td>${fmtR(r.metaImp)}</td><td>${fmtR(r.wa)}</td><td><b>${fmtR(r.custo)}</b></td>
+      <td>${fmtR(r.web)}</td><td>${fmtR(r.anne)}</td><td>${fmtR(r.site)}</td>
+      <td><b>${fmtR(r.ret)}</b>${extra}</td><td>${r.vend>0?fmtR(r.vend)+` <small>(${r.nVend})</small>`:"—"}</td>
+      <td class="${lido?cls(r.roasPainel, 2.2, 1.2):""}">${fmtX(r.roasPainel)}</td>
+      <td class="${lido?cls(r.roasFunil, 2.6, 1.5):""}"><b>${fmtX(r.roasFunil)}</b></td></tr>`;
+  }
+  h += `<tr><td><b>Total</b></td><td><b>${fmtR(M.T.metaImp)}</b></td><td><b>${fmtR(M.T.wa)}</b></td><td><b>${fmtR(M.T.custo)}</b></td><td colspan="3"></td>
+    <td><b>${fmtR(M.T.ret)}</b></td><td><b>${fmtR(M.T.vend)}</b></td><td class="${cls(M.T.roasPainel, 2.2, 1.5)}"><b>${fmtX(M.T.roasPainel)}</b></td>
+    <td class="${cls(M.T.roasFunil, 2.6, 1.8)}"><b>${fmtX(M.T.roasFunil)}</b></td></tr></table></div>
+    <div class="note">A captação da Black não alunos (até 12/11) gastou sem concurso no nome e vendeu pelo vendedor: o custo fica na linha "Black geral" e a venda no concurso da mentoria — por isso o ROAS por concurso de novembro só é comparável pelo total.</div>`;
+
+  // frentes do plano (13 a 30/11)
+  const metaWeb = WEBS.reduce((a,k) => a + P.web[k].vendasDia * diasWeb(k, hoje), 0), metaTorra = P.torraTotal.vendasDia * pesosTorraAte(hoje);
+  const lin = (nome, obs, plano, custo, vendas, meta, ret, esperado) => `<tr><td>${nome}<br><small>${obs}</small></td><td>${fmtR(plano)}</td><td><b>${fmtR(custo)}</b><br><small>${fmtPct(pct(custo, plano))} consumido</small></td>
+      <td><b>${vendas}</b> · ${fmtD(meta)}</td><td><b>${fmtR(ret)}</b><br><small>de ${fmtR(esperado)}</small></td><td>${vendas > 0 && custo >= 1 ? fmtR(custo / vendas) : "—"}</td>
+      <td class="${custo >= 500 ? cls(ret/custo, esperado/plano, 2.6) : ""}"><b>${custo >= 500 ? fmtX(ret/custo) : "—"}</b></td><td>${fmtX(esperado/plano)}</td></tr>`;
+  h += `<div class="rs-h"><h3>Frentes do plano · 13 a 30/11</h3><span>custo = mídia com imposto + disparo da frente · vendas contra a meta até hoje (meta por dia × dias corridos) · retorno contra o esperado do plano · ROAS aparece com R$ 500 ou mais de gasto</span></div>
+    <div class="rs-wrap"><table class="rs"><tr><th>Frente</th><th>Plano</th><th>Custo executado</th><th>Vendas · meta até hoje</th><th>Retorno</th><th>Custo por venda</th><th>ROAS</th><th>ROAS do plano</th></tr>
+    ${lin("Webinários automáticos (4 funis)", "13 a 30/11 · 63 vendas esperadas", P.webTotal.total, T.web, T.webVendas, metaWeb, T.webRet, P.webTotal.retorno)}
+    ${lin("Torra · venda direta por concurso", "23 a 30/11 · 113 vendas esperadas", P.torraTotal.total, T.torra, T.torraVendas, metaTorra, T.torraRet, P.torraTotal.retorno)}
+    ${lin("<b>Total das frentes</b>", "176 vendas esperadas", P.webTotal.total + P.torraTotal.total, T.custoPlano, T.vendasPlano, metaWeb + metaTorra, T.retPlano, P.retorno)}
+    </table></div>`;
+  $("roas").innerHTML = h;
 }
 
 /* ---- 2 · verba do dia ---- */
@@ -892,32 +1053,35 @@ function tresDiasAcima(L, k, tipo){
   return (cac == null || cac > cacMax) ? { custo, vendas, cac, cacMax } : null;
 }
 
-/* ---- 5 · webinários ---- */
+/* ---- 6 · webinários ---- */
 function renderWeb(){
   const hoje = C.hoje, P = PLANO;
-  let h = `<div class="rs-wrap"><table class="rs"><tr><th>Webinário</th><th>Verba diária do plano · gasto de hoje</th><th>Mídia c/ imposto</th><th>Disparo</th><th>Total</th><th>Plano no período</th><th>Leads</th><th>Custo por lead</th><th>Vendas · meta até hoje</th><th>Custo por venda · máximo</th><th>Retorno</th></tr>`;
+  const fx = (v, ok, stop, inv) => v==null ? "" : inv ? (v >= ok ? "ok" : v >= stop ? "mid" : "bad") : (v <= ok ? "ok" : v <= stop ? "mid" : "bad");
+  let h = `<div class="rs-wrap"><table class="rs"><tr><th>Frente</th><th>Meta [WEB] c/ imposto</th><th>Disparo</th><th>Leads</th><th>Custo por lead</th><th>Assistiram</th><th>Pitch/sala</th><th>Checkout/pitch</th><th>Compra/checkout</th><th>Vendas · meta até hoje</th><th>Receita por lead</th><th>CAC · máximo</th><th>ROAS</th></tr>`;
   const S = { hoje:0, midia:0, disp:0, leads:0, vendas:0, meta:0, ret:0 };
   for (const k of WEBS){
-    const w = P.web[k], L = C.web[k], F = C.funil[k] || { inscritos:0 };
+    const w = P.web[k], L = C.web[k], F = C.funil[k] || { inscritos:0, sala:0, pitch:0, checkout:0, hoje:0 };
     const midia = L.meta * (1 + IMPOSTO), disp = L.dispN * TARIFA_TPL, custo = midia + disp, dias = diasWeb(k, hoje);
-    const gh = L.dia[hoje]||0, R = leituraLinha(L, custo, w.cacMax, w.vendasDia, dias), comecou = hoje >= w.ini;
-    const semGasto = comecou && L.meta < 0.5;
+    const gh = L.dia[hoje]||0, R = leituraLinha(L, custo, w.cacMax, w.vendasDia, dias), comecou = hoje >= w.ini, am = F.inscritos >= 30;
+    const sala = pct(F.sala,F.inscritos), pitch = pct(F.pitch,F.sala), ck = pct(F.checkout,F.pitch), cp = pct(L.vendas,F.checkout);
     S.hoje += gh; S.midia += midia; S.disp += disp; S.leads += F.inscritos; S.vendas += L.vendas; S.meta += R.metaAteHoje; S.ret += L.ret;
     h += `<tr><td>${esc(w.nome)}<br><small>${esc(w.sub)} · ${w.marca}</small></td>
-      <td>R$ ${w.diaria} · <b class="${gh > w.diaria * 1.02 ? "bad" : ""}" style="${gh > w.diaria * 1.02 ? "color:var(--red)" : ""}">${comecou ? fmtR2(gh) : "começa " + ddmm(w.ini)}</b>${semGasto ? `<br><small style="color:var(--red)">sem gasto até agora</small>` : ""}${cfgTxt(cfgLinha("web", k, hoje))}</td>
-      <td><b>${fmtR(midia)}</b><br><small>previsto ${fmtR(prevWebMidia(k, hoje))} · plano ${fmtN(w.midia)}</small></td>
+      <td><b>${fmtR(midia)}</b><br><small>previsto ${fmtR(prevWebMidia(k, hoje))} · plano ${fmtN(w.midia)}</small><br><small>R$ ${w.diaria}/dia · hoje ${comecou ? fmtR2(gh) : "começa " + ddmm(w.ini)}</small>${comecou && L.meta < 0.5 ? `<br><small style="color:var(--red)">sem gasto até agora</small>` : ""}${cfgTxt(cfgLinha("web", k, hoje))}</td>
       <td>${fmtR(disp)}<br><small>${fmtN(L.dispN)} msgs · plano ${fmtN(w.disparo)}</small></td>
-      <td class="${custo > w.midia + w.disparo ? "bad" : ""}"><b>${fmtR(custo)}</b></td><td>${fmtR(w.midia + w.disparo)}<br><small>${fmtPct(pct(custo, w.midia + w.disparo))} consumido</small></td>
-      <td>${fmtN(F.inscritos)}${F.hoje ? `<br><small>${F.hoje} hoje</small>` : ""}</td><td>${F.inscritos >= 10 ? fmtR2(midia / F.inscritos) : "—"}</td>
-      <td><b>${L.vendas}</b> · ${fmtD(R.metaAteHoje)}<br><small>${fmtD(w.vendasDia)}/dia · ${w.vendas} no mês</small></td>
-      <td class="${R.cls}"><b>${R.txt}</b> · R$ ${w.cacMax}</td><td>${fmtR(L.ret)}</td></tr>`;
+      <td>${fmtN(F.inscritos)}${F.hoje ? `<br><small>${F.hoje} hoje</small>` : ""}</td>
+      <td>${F.inscritos >= 10 ? fmtR2(midia / F.inscritos) : "—"}${F.inscritos > 0 && !am ? `<br><small>amostra pequena</small>` : ""}</td>
+      <td class="${am?fx(sala,.75,.6,true):""}">${fmtPct(sala)}</td><td class="${am?fx(pitch,.40,.30,true):""}">${fmtPct(pitch)}</td><td class="${am?fx(ck,.30,.2,true):""}">${fmtPct(ck)}</td><td>${fmtPct(cp)}</td>
+      <td><b>${L.vendas}</b> · ${fmtD(R.metaAteHoje)}<br><small>${fmtD(w.vendasDia)}/dia · ${w.vendas} no mês · ${fmtK(L.ret)}</small></td>
+      <td>${F.inscritos > 0 ? fmtR2(L.ret / F.inscritos) : "—"}</td>
+      <td class="${R.cls}"><b>${R.txt}</b> · R$ ${w.cacMax}</td><td>${custo >= ROAS_MIN_CUSTO ? fmtX(L.ret / custo) : "—"}</td></tr>`;
   }
   const custoT = S.midia + S.disp;
-  h += `<tr><td><b>Total</b></td><td><b>R$ 615 · ${fmtR2(S.hoje)}</b>${C.orc.ok ? `<br><small>configurado R$ ${fmtN(WEBS.reduce((a,k) => a + C.orc.web[k].cfg, 0))}/dia</small>` : ""}</td><td><b>${fmtR(S.midia)}</b><br><small>plano ${fmtN(P.webTotal.midia)}</small></td><td><b>${fmtR(S.disp)}</b><br><small>plano ${fmtN(P.webTotal.disparo)}</small></td>
-    <td><b>${fmtR(custoT)}</b></td><td><b>${fmtR(P.webTotal.total)}</b><br><small>${fmtPct(pct(custoT, P.webTotal.total))} consumido</small></td><td><b>${fmtN(S.leads)}</b></td><td>${S.leads >= 10 ? fmtR2(S.midia / S.leads) : "—"}</td>
-    <td><b>${S.vendas}</b> · ${fmtD(S.meta)}<br><small>3,5/dia · 63 no mês</small></td><td><b>${S.vendas > 0 ? fmtR(custoT / S.vendas) : "—"}</b></td><td><b>${fmtR(S.ret)}</b><br><small>de R$ 70.000</small></td></tr></table></div>`;
+  h += `<tr><td><b>Total</b></td><td><b>${fmtR(S.midia)}</b><br><small>plano ${fmtN(P.webTotal.midia)}</small><br><small>R$ 615/dia · hoje ${fmtR2(S.hoje)}</small>${C.orc.ok ? `<br><small>configurado R$ ${fmtN(WEBS.reduce((a,k) => a + C.orc.web[k].cfg, 0))}/dia</small>` : ""}</td>
+    <td><b>${fmtR(S.disp)}</b><br><small>plano ${fmtN(P.webTotal.disparo)}</small></td><td><b>${fmtN(S.leads)}</b></td><td>${S.leads >= 10 ? fmtR2(S.midia / S.leads) : "—"}</td><td colspan="4"></td>
+    <td><b>${S.vendas}</b> · ${fmtD(S.meta)}<br><small>3,5/dia · 63 no mês · ${fmtK(S.ret)} de 70 mil</small></td><td>${S.leads > 0 ? fmtR2(S.ret / S.leads) : "—"}</td>
+    <td><b>${S.vendas > 0 && custoT >= 1 ? fmtR(custoT / S.vendas) : "—"}</b></td><td><b>${custoT >= ROAS_MIN_CUSTO ? fmtX(S.ret / custoT) : "—"}</b></td></tr></table></div>`;
   const O = C.outras, reg = C.T.webRegua;
-  h += `<div class="note">Venda do funil = fatura paga com a marcação do webinário no checkout (sou-webinario + nome do webinário), a partir do início de cada funil. Leads = cadastros na plataforma do webinário. Meta até hoje = meta de vendas por dia × dias corridos (hoje conta inteiro).
+  h += `<div class="note">Venda do funil = fatura paga com a marcação do webinário no checkout (sou-webinario + nome do webinário), a partir do início de cada funil. Leads = cadastros na plataforma do webinário. Meta até hoje = meta de vendas por dia × dias corridos (hoje conta inteiro). CAC = (mídia com imposto + disparo) ÷ vendas, contra o custo máximo por venda do plano.
     ${O.blackN ? `Outras vendas da oferta de Black desde 13/11 que não entram nos funis (vendedor, orgânico, grupo): <b>${O.blackN}</b> · ${fmtR(O.black)}.` : ""}
     Régua dos 4 webinários (confirmação, lembrete e follow-up enviados pelos agentes): <b>${fmtN(C.T.webRegua / TARIFA_TPL)}</b> templates = ${fmtR2(reg)} — o plano não dá verba de disparo para isso, sai da reserva.</div>
     <div class="note"><b>Regra da PRF (16/11):</b> até R$ 250 por venda recebe mais R$ 30/dia do PC-AM; acima de R$ 400 volta para R$ 100/dia. Se a oferta da Black encerrar em 22/11, a verba da Revolução de 23 a 30/11 passa para o torra.</div>`;
@@ -950,7 +1114,7 @@ function renderWeb(){
   }).join("");
 }
 
-/* ---- 6 · torra ---- */
+/* ---- 7 · torra (venda direta) ---- */
 function renderTorra(){
   const hoje = C.hoje, P = PLANO, comecou = hoje >= P.torraIni, dias = pesosTorraAte(hoje);
   let h = "";
@@ -998,13 +1162,13 @@ function renderGasto(){
 
   // 0 · envelope do mês
   const difAte12 = T.ate12 - P.gastoAte12;
-  html += `<div class="rs-h"><h3>0 · Teto do mês (R$ 110 mil)</h3><span>mídia + imposto + disparo + ligações · o que saiu até 12/11 e o que o plano reservou de 13 a 30/11</span></div>
+  const fech = `<div class="rs-h"><h3>6 · Fechamento do envelope (teto de R$ 110 mil)</h3><span>mídia + imposto + disparo + ligações · o que saiu até 12/11 e o que o plano reservou de 13 a 30/11</span></div>
     <div class="rs-wrap"><table class="rs">${cab}
     ${linha("Já gasto até 12/11", P.gastoAte12, P.gastoAte12, T.ate12, `Meta com imposto ${fmtR(T.ate12Meta)} + ${fmtN(C.ate12.tplN)} templates ${fmtR(T.ate12Tpl)} + ${fmtN(C.ate12.respN)} respostas ${fmtR(T.ate12Resp)} · o plano fechou em R$ 79.846 às 17h09 de 12/11 (diferença de ${sDif(difAte12)} na minha medição)`)}
     ${linha("Webinários automáticos (4 funis)", P.webTotal.total, C.prev.web, T.web, "mídia com imposto " + fmtR(T.webMeta) + " + disparo " + fmtR(T.webDisp))}
     ${linha("Torra · venda direta por concurso", P.torraTotal.total, C.prev.torra, T.torra, "de 23 a 30/11 · mídia com imposto " + fmtR(T.torraMeta) + " + disparo " + fmtR(T.torraDisp))}
     ${linha("Reserva (respostas da Anne e ajustes)", P.reserva, C.prev.reserva, T.reserva, `${fmtN(C.per.respN)} respostas ${fmtR2(C.per.respN*TARIFA_RESP)} + réguas e follow-ups dos agentes ${fmtR2(T.webRegua + C.fora.reguaN*TARIFA_TPL)}`)}
-    ${linha("Fora do plano (desde 13/11)", null, null, T.fora, T.fora > 0.5 ? `campanhas da Meta ${fmtR(C.fora.meta*(1+IMPOSTO))} + disparos ${fmtR(C.fora.dispN*TARIFA_TPL)} que o plano não previu — lista no bloco 6` : "nenhuma campanha ou disparo fora do plano")}
+    ${linha("Fora do plano (desde 13/11)", null, null, T.fora, T.fora > 0.5 ? `campanhas da Meta ${fmtR(C.fora.meta*(1+IMPOSTO))} + disparos ${fmtR(C.fora.dispN*TARIFA_TPL)} que o plano não previu — lista no bloco 7` : "nenhuma campanha ou disparo fora do plano")}
     ${linha("<b>De 13 a 30/11</b>", P.disponivel, C.prev.periodo, T.periodo)}
     ${linha("Google Ads (informado)", null, null, GOOGLE.valor||0, esc(GOOGLE.obs) + " · não está nos R$ 79.846 do plano")}
     ${linha("Ligações · Ligue Lead (informado)", null, null, LIGUE_LEAD.valor||0, esc(LIGUE_LEAD.obs))}
@@ -1020,14 +1184,14 @@ function renderGasto(){
   h1 += linha("<b>Total</b>", P.webTotal.midia, b, a) + `</table></div>`;
 
   // 2 · webinários · disparo
-  let h2 = `<div class="rs-h"><h3>2 · Webinários · disparo de convite (R$ 0,35 por mensagem)</h3><span>campanhas de disparo com [WEB] + o funil no nome · Revolução 900 · PRF 600 · TJ-AM 600 · PC-AM 400</span></div><div class="rs-wrap"><table class="rs"><tr><th>Linha</th><th>Plano</th><th>Executado</th><th>Mensagens</th><th>Resta</th><th>Consumido</th><th>Régua do agente (fora da verba)</th></tr>`;
+  let h2 = `<div class="rs-h"><h3>3 · WhatsApp · disparo de convite dos webinários (R$ 0,35 por mensagem)</h3><span>campanhas de disparo com [WEB] + o funil no nome · Revolução 900 · PRF 600 · TJ-AM 600 · PC-AM 400</span></div><div class="rs-wrap"><table class="rs"><tr><th>Linha</th><th>Plano</th><th>Executado</th><th>Mensagens</th><th>Resta</th><th>Consumido</th><th>Régua do agente (fora da verba)</th></tr>`;
   let dn = 0, rn = 0;
   for (const k of WEBS){ const w = P.web[k], L = C.web[k], ex = L.dispN * TARIFA_TPL; dn += L.dispN; rn += L.reguaN;
     h2 += `<tr><td>${esc(w.nome)}</td><td>${fmtR(w.disparo)}</td><td><b>${fmtR2(ex)}</b></td><td>${fmtN(L.dispN)} de ≈ ${fmtN(w.disparo/TARIFA_TPL)}</td><td class="${w.disparo-ex<0?"bad":""}">${fmtR(w.disparo-ex)}</td><td class="${clsCons(ex,w.disparo)}">${pc(ex,w.disparo)}</td><td>${fmtN(L.reguaN)} templates · ${fmtR2(L.reguaN*TARIFA_TPL)}</td></tr>`; }
   h2 += `<tr><td><b>Total</b></td><td><b>${fmtR(P.webTotal.disparo)}</b></td><td><b>${fmtR2(dn*TARIFA_TPL)}</b></td><td><b>${fmtN(dn)}</b></td><td><b>${fmtR(P.webTotal.disparo - dn*TARIFA_TPL)}</b></td><td class="${clsCons(dn*TARIFA_TPL,P.webTotal.disparo)}"><b>${pc(dn*TARIFA_TPL,P.webTotal.disparo)}</b></td><td><b>${fmtN(rn)} · ${fmtR2(rn*TARIFA_TPL)}</b></td></tr></table></div>`;
 
   // 3 · torra · Meta
-  let h3 = `<div class="rs-h"><h3>3 · Torra · Meta por mentoria (com imposto)</h3><span>de 23 a 30/11 · campanhas [TORRA] + mentoria · R$ 820/dia na Meta · 27/11 em dobro, 28 e 29/11 pela metade</span></div><div class="rs-wrap"><table class="rs">${cab}`;
+  let h3 = `<div class="rs-h"><h3>2 · Torra · Meta por mentoria (com imposto)</h3><span>de 23 a 30/11 · campanhas [TORRA] + mentoria · R$ 820/dia na Meta · 27/11 em dobro, 28 e 29/11 pela metade</span></div><div class="rs-wrap"><table class="rs">${cab}`;
   a = 0; b = 0;
   for (const k of TORRAS){ const t = P.torra[k], ex = C.torra[k].meta * (1 + IMPOSTO), pv = prevTorraMidia(k, hoje); a += ex; b += pv;
     h3 += linha(esc(t.nome), t.midia, pv, ex, `R$ ${t.diaria}/dia na Meta · ${t.marca}`); }
@@ -1036,7 +1200,7 @@ function renderGasto(){
 
   // 4 · torra · disparo
   const tdN = [...TORRAS, "GERAL"].reduce((s,k) => s + C.torra[k].dispN, 0), tdPRF = C.torra.PRF.dispN, tdEx = tdN * TARIFA_TPL;
-  const h4 = `<div class="rs-h"><h3>4 · Torra · disparo para a base</h3><span>campanhas de disparo com [TORRA] no nome · R$ 5.500 ≈ 15.700 mensagens · R$ 2.000 para a base PRF</span></div><div class="rs-wrap"><table class="rs"><tr><th>Linha</th><th>Plano</th><th>Executado</th><th>Mensagens</th><th>Resta</th><th>Consumido</th></tr>
+  const h4 = `<div class="rs-h"><h3>4 · WhatsApp · disparo do torra para a base</h3><span>campanhas de disparo com [TORRA] no nome · R$ 5.500 ≈ 15.700 mensagens · R$ 2.000 para a base PRF</span></div><div class="rs-wrap"><table class="rs"><tr><th>Linha</th><th>Plano</th><th>Executado</th><th>Mensagens</th><th>Resta</th><th>Consumido</th></tr>
     <tr><td>Base PRF (notícia como gancho)</td><td>${fmtR(P.torraTotal.disparoPRF)}</td><td><b>${fmtR2(tdPRF*TARIFA_TPL)}</b></td><td>${fmtN(tdPRF)}</td><td>${fmtR(P.torraTotal.disparoPRF - tdPRF*TARIFA_TPL)}</td><td class="${clsCons(tdPRF*TARIFA_TPL,P.torraTotal.disparoPRF)}">${pc(tdPRF*TARIFA_TPL,P.torraTotal.disparoPRF)}</td></tr>
     <tr><td>Demais bases</td><td>${fmtR(P.torraTotal.disparo - P.torraTotal.disparoPRF)}</td><td><b>${fmtR2((tdN-tdPRF)*TARIFA_TPL)}</b></td><td>${fmtN(tdN-tdPRF)}</td><td>${fmtR(P.torraTotal.disparo - P.torraTotal.disparoPRF - (tdN-tdPRF)*TARIFA_TPL)}</td><td>${pc((tdN-tdPRF)*TARIFA_TPL, P.torraTotal.disparo - P.torraTotal.disparoPRF)}</td></tr>
     <tr><td><b>Total</b></td><td><b>${fmtR(P.torraTotal.disparo)}</b></td><td><b>${fmtR2(tdEx)}</b></td><td><b>${fmtN(tdN)}</b></td><td class="${P.torraTotal.disparo-tdEx<0?"bad":""}"><b>${fmtR(P.torraTotal.disparo - tdEx)}</b></td><td class="${clsCons(tdEx,P.torraTotal.disparo)}"><b>${pc(tdEx,P.torraTotal.disparo)}</b></td></tr></table></div>`;
@@ -1051,7 +1215,7 @@ function renderGasto(){
 
   // 6 · fora do plano
   const fc = Object.entries(C.fora.camps).sort((x,y) => y[1]-x[1]), fd = Object.entries(C.fora.disp).sort((x,y) => y[1]-x[1]);
-  let h6 = `<div class="rs-h"><h3>6 · Fora do plano desde 13/11</h3><span>campanha da Meta que não é [WEB] de um dos 4 funis nem [TORRA], e disparo sem [WEB] ou [TORRA] no nome · tudo isso consome o teto sem linha no plano</span></div>`;
+  let h6 = `<div class="rs-h"><h3>7 · Fora do plano desde 13/11</h3><span>campanha da Meta que não é [WEB] de um dos 4 funis nem [TORRA], e disparo sem [WEB] ou [TORRA] no nome · tudo isso consome o teto sem linha no plano</span></div>`;
   if (!fc.length && !fd.length) h6 += `<div class="all-ok" style="margin-top:8px"><span class="ic">✓</span> Nada fora do plano desde 13/11.</div>`;
   else h6 += `<div class="rs-wrap"><table class="rs"><tr><th>Campanha ou disparo</th><th>Tipo</th><th>Quantidade</th><th>Gasto</th></tr>
     ${fc.map(([n,v]) => `<tr><td style="white-space:normal">${esc(n)}${/BLACK/i.test(n) && /NAO ?ALUNOS/i.test(n) ? `<br><small style="color:var(--red)">mídia da Black não alunos deveria estar pausada</small>` : ""}</td><td>Meta</td><td>—</td><td><b>${fmtR2(v*(1+IMPOSTO))}</b><br><small>${fmtR2(v)} sem imposto</small></td></tr>`).join("")}
@@ -1061,7 +1225,7 @@ function renderGasto(){
   // 7 · o que está rodando
   for (const [n, o] of Object.entries(C.orc.camps)) if (!C.rodando[n]) C.rodando[n] = { conta: o.conta.replace("SCVP ", "SCVP - "), v:0, hoje:0, ontem:0, g:o.g, k:o.k };
   const rod = Object.entries(C.rodando).sort((x,y) => y[1].v - x[1].v);
-  let h7 = `<div class="rs-h"><h3>7 · Campanhas da Meta com gasto desde 13/11</h3><span>o que está rodando de fato, mais as campanhas ativas do plano que ainda não gastaram · valores sem imposto, como no Gerenciador · linha = onde o painel encaixou a campanha</span></div>`;
+  let h7 = `<div class="rs-h"><h3>8 · Campanhas da Meta com gasto desde 13/11</h3><span>o que está rodando de fato, mais as campanhas ativas do plano que ainda não gastaram · valores sem imposto, como no Gerenciador · linha = onde o painel encaixou a campanha</span></div>`;
   h7 += rod.length ? `<div class="rs-wrap"><table class="rs"><tr><th>Campanha</th><th>Conta</th><th>Linha do plano</th><th>Verba diária do plano</th><th>Configurado na Meta</th><th>Hoje (parcial)</th><th>Ontem</th><th>Desde 13/11</th></tr>
     ${rod.map(([n,r]) => { const lin = r.g === "web" ? "Webinário · " + P.web[r.k].nome : r.g === "torra" ? "Torra · " + (P.torra[r.k]?.nome || "sem mentoria") : "FORA DO PLANO";
       const di = r.g === "web" ? diariaWeb(r.k, hoje) : r.g === "torra" && P.torra[r.k] ? diariaTorra(r.k, hoje) : null;
@@ -1074,7 +1238,7 @@ function renderGasto(){
   // 8 · até 12/11
   const mf = Object.entries(C.ate12.metaFam).sort((x,y) => y[1]-x[1]), wf = Object.entries(C.ate12.msgFam).sort((x,y) => y[1]-x[1]);
   const top = Object.entries(C.ate12.camps).sort((x,y) => y[1]-x[1]);
-  const h8 = `<div class="rs-h"><h3>8 · De onde saíram os gastos até 12/11</h3><span>Meta com imposto por família de campanha e templates do WhatsApp por ação</span></div>
+  const h8 = `<div class="rs-h"><h3>9 · De onde saíram os gastos até 12/11</h3><span>Meta com imposto por família de campanha e templates do WhatsApp por ação</span></div>
     <div class="rs-wrap"><table class="rs"><tr><th>Família</th><th>Tipo</th><th>Quantidade</th><th>Gasto</th><th>% do gasto até 12/11</th></tr>
     ${mf.map(([n,v]) => `<tr><td>${esc(n)}</td><td>Meta</td><td>—</td><td><b>${fmtR(v*(1+IMPOSTO))}</b></td><td>${pc(v*(1+IMPOSTO), T.ate12)}</td></tr>`).join("")}
     ${wf.map(([n,q]) => `<tr><td>${esc(n)}</td><td>WhatsApp</td><td>${fmtN(q)} templates</td><td><b>${fmtR(q*TARIFA_TPL)}</b></td><td>${pc(q*TARIFA_TPL, T.ate12)}</td></tr>`).join("")}
@@ -1087,9 +1251,24 @@ function renderGasto(){
   const notas = [
     `<b>Teto:</b> ${fmtR(T.mes)} investidos no mês de R$ 110.000 (${pc(T.mes, P.teto)}). Se as frentes gastarem exatamente o que o plano reservou daqui em diante, o mês fecha em ${fmtR(T.ate12 + T.extra + T.periodo + Math.max(P.disponivel - C.prev.periodo, 0))}.`,
     `<b>De 13 a 30/11:</b> ${fmtR(T.periodo)} executados contra ${fmtR(C.prev.periodo)} previstos até hoje (${sDif(T.periodo - C.prev.periodo)}). ${diasRest > 0 ? `Restam ${fmtR(restaPer)} para ${diasRest} dias.` : "Último dia do plano."}`,
-    `<b>Disparos:</b> ${fmtR2((dn + tdN) * TARIFA_TPL)} dos R$ 8.000 reservados (${pc((dn + tdN) * TARIFA_TPL, P.disparos)}) em campanhas com [WEB] ou [TORRA] no nome. Templates das réguas e de outras ações não entram nessa conta: aparecem na reserva (bloco 5) e no fora do plano (bloco 6).`,
+    `<b>Disparos:</b> ${fmtR2((dn + tdN) * TARIFA_TPL)} dos R$ 8.000 reservados (${pc((dn + tdN) * TARIFA_TPL, P.disparos)}) em campanhas com [WEB] ou [TORRA] no nome. Templates das réguas e de outras ações não entram nessa conta: aparecem na reserva (bloco 5) e no fora do plano (bloco 7).`,
   ];
-  html += h1 + h2 + h3 + h4 + h5 + h6 + h7 + h8 + `<div class="note" style="margin-top:10px">${notas.join("<br>")}</div>`;
+  // 0 · orçamento por frente (a tabela do plano: cada célula mostra o executado sobre o reservado)
+  const cel = (e, p) => `<td class="${clsCons(e,p)}">${fmtR(e)}<br><small>de ${p != null ? fmtN(p) : "—"}</small></td>`;
+  const cfgCel = (tipo, k) => { const x = cfgLinha(tipo, k, hoje); return x == null ? "—" : x.n === 0 ? "<small>sem campanha ativa</small>" : `<span style="${x.acima ? "color:var(--red);font-weight:600" : ""}">R$ ${fmtN(x.cfg)}</span>`; };
+  let h0 = `<div class="rs-h"><h3>0 · Orçamento por frente (R$ 30.154 de 13 a 30/11)</h3><span>executado sobre o plano de cada célula · mídia já com os 13,83% de imposto · verba diária e configurado = sem imposto, como na Meta</span></div>
+    <div class="rs-wrap"><table class="rs"><tr><th>Frente</th><th>Verba diária do plano</th><th>Configurado na Meta</th><th>Mídia c/ imposto</th><th>Disparo</th><th>Custo total</th><th>Plano</th><th>Consumido</th></tr>`;
+  for (const k of WEBS){ const w = P.web[k], L = C.web[k], mi = L.meta*(1+IMPOSTO), di = L.dispN*TARIFA_TPL;
+    h0 += `<tr><td>${esc(w.nome)}<br><small>webinário · desde ${ddmm(w.ini)}</small></td><td>R$ ${w.diaria}</td><td>${cfgCel("web", k)}</td>${cel(mi, w.midia)}${cel(di, w.disparo)}<td><b>${fmtR(mi+di)}</b></td><td>${fmtR(w.midia+w.disparo)}</td><td class="${clsCons(mi+di, w.midia+w.disparo)}">${pc(mi+di, w.midia+w.disparo)}</td></tr>`; }
+  for (const k of TORRAS){ const t = P.torra[k], mi = C.torra[k].meta*(1+IMPOSTO);
+    h0 += `<tr><td>${esc(t.nome)}<br><small>torra · 23 a 30/11</small></td><td>R$ ${t.diaria}</td><td>${cfgCel("torra", k)}</td>${cel(mi, t.midia)}<td>—</td><td><b>${fmtR(mi)}</b></td><td>${fmtR(t.midia)}</td><td class="${clsCons(mi, t.midia)}">${pc(mi, t.midia)}</td></tr>`; }
+  h0 += `<tr><td>Torra · disparo para a base<br><small>R$ 2.000 para a base PRF</small></td><td>—</td><td>—</td><td>—</td>${cel(tdEx, P.torraTotal.disparo)}<td><b>${fmtR(tdEx)}</b></td><td>${fmtR(P.torraTotal.disparo)}</td><td class="${clsCons(tdEx, P.torraTotal.disparo)}">${pc(tdEx, P.torraTotal.disparo)}</td></tr>
+    <tr><td>Reserva<br><small>respostas da Anne e réguas dos agentes</small></td><td>—</td><td>—</td><td>—</td><td>—</td><td><b>${fmtR(T.reserva)}</b></td><td>${fmtR(P.reserva)}</td><td class="${clsCons(T.reserva, P.reserva)}">${pc(T.reserva, P.reserva)}</td></tr>
+    ${T.fora > 0.5 ? `<tr><td style="color:var(--red)">Fora do plano<br><small>campanhas e disparos sem linha no plano</small></td><td>—</td><td>—</td><td>${fmtR(C.fora.meta*(1+IMPOSTO))}</td><td>${fmtR(C.fora.dispN*TARIFA_TPL)}</td><td class="bad"><b>${fmtR(T.fora)}</b></td><td>—</td><td>—</td></tr>` : ""}
+    <tr><td><b>Total de 13 a 30/11</b></td><td><b>R$ 615</b><br><small>+ R$ 820 do torra de 23 a 30/11</small></td><td><b>${C.orc.ok ? "R$ " + fmtN(WEBS.reduce((s,k) => s + C.orc.web[k].cfg, 0) + TORRAS.reduce((s,k) => s + C.orc.torra[k].cfg, 0)) : "—"}</b></td>
+      <td><b>${fmtR(T.webMeta + T.torraMeta + C.fora.meta*(1+IMPOSTO))}</b><br><small>de ${fmtN(P.webTotal.midia + P.torraTotal.midia)}</small></td><td><b>${fmtR(T.webDisp + T.torraDisp + C.fora.dispN*TARIFA_TPL)}</b><br><small>de ${fmtN(P.disparos)}</small></td>
+      <td><b>${fmtR(T.periodo)}</b></td><td><b>${fmtR(P.disponivel)}</b></td><td class="${clsCons(T.periodo, P.disponivel)}"><b>${pc(T.periodo, P.disponivel)}</b></td></tr></table></div>`;
+  html += h0 + h1 + h3 + h2 + h4 + h5 + fech + h6 + h7 + h8 + `<div class="note" style="margin-top:10px">${notas.join("<br>")}</div>`;
   $("gasto").innerHTML = html;
 }
 
@@ -1097,6 +1276,14 @@ function renderGasto(){
 function renderInsights(){
   const out = []; const ins = (cls, ic, k, t) => out.push({cls,ic,k,t});
   const T = C.T, P = PLANO, hoje = C.hoje, diaPlano = diasEntre(PLANO_INI, hoje);
+  // ritmo da meta (igual ao painel de outubro)
+  const R = ritmo(), diaMes = diaIdx(hoje) + 1, restamMes = DIAS_MES - diaMes + 1, M = C.M;
+  if (mesFechado()) ins(C.medido >= META ? "good" : "warn", "🏁", "Fechamento do mês", `Novembro fechou com <b>${fmtK(C.medido)}</b> líquidos — ${Math.round(C.medido/META*100)}% dos R$ 523 mil que o plano previa.`);
+  else if (R.fechado){ const dif = R.medFech - R.metaFech, precisa = Math.max(META - C.medido, 0) / Math.max(restamMes, 1);
+    ins(dif >= -1 ? "good" : R.razao >= 0.95 ? "warn" : "bad", "🎯", "Ritmo da meta",
+      `Até ${ddmm(R.fechado)}: <b>${fmtK(R.medFech)}</b> medidos contra <b>${fmtK(R.metaFech)}</b> da meta acumulada (${Math.abs(dif) < 50 ? "no ritmo" : (dif>=0?"+":"") + fmtK(dif)}). Para fechar R$ 523 mil faltam <b>${fmtK(precisa)}/dia</b> nos ${restamMes} dias que restam, contando hoje — a média de 01 a 12/11 foi de R$ 14,9 mil por dia, puxada pelos R$ 82,9 mil do dia da live (10/11).${R.proj != null && R.diasPlano >= 3 ? ` No ritmo de 13/11 para cá o mês fecha em <b>${fmtK(R.proj)}</b>.` : ""}`); }
+  ins("info", "🧩", "De onde vem a receita", `Entrega do tráfego <b>${fmtK(M.linhas.trafego)}</b> · recorrência <b>${fmtK(M.linhas.rec)}</b> · comercial fora do funil ${fmtK(M.linhas.comercial)} · CS ${fmtK(M.linhas.cs)} · outros ${fmtK(M.linhas.outros)}. Das frentes do plano: webinários ${fmtR(C.comp.web)} de R$ 70 mil · torra ${fmtR(C.comp.torra)} de R$ 102 mil.`);
+  ins(M.T.roasFunil >= 2.6 ? "good" : M.T.roasFunil >= 1.8 ? "warn" : "bad", "📈", "ROAS do mês", `Regra do painel <b>${fmtX(M.T.roasPainel)}</b> · funil completo <b>${fmtX(M.T.roasFunil)}</b> sobre ${fmtR(M.T.custo)} investidos. O mês carrega os R$ 79,8 mil da Black não alunos; as frentes do plano (13 a 30/11) precisam devolver 6,18× para o retorno esperado de R$ 172 mil.`);
   // teto
   const fechaEm = T.ate12 + T.extra + T.periodo + Math.max(P.disponivel - C.prev.periodo, 0);
   ins(T.mes > P.teto ? "bad" : fechaEm > P.teto ? "warn" : "good", "🧮", "Teto do mês",
@@ -1138,9 +1325,6 @@ function renderInsights(){
     ins("warn", "🚧", "Fora do plano", `<b>${fmtR(T.fora)}</b> desde 13/11 em ações sem linha no plano. ${nomes.length ? "Meta: " + nomes.join(" · ") + ". " : ""}${dnomes.length ? "Disparos: " + dnomes.join(" · ") + "." : ""} A lista completa está na aba Gasto.`); }
   // torra
   if (hoje < P.torraIni) ins("info", "🔥", "Torra", `Começa em 23/11 com R$ 820/dia na Meta e R$ 5.500 de disparo. Precisa estar pronto até 22/11: preços no site, campanha por mentoria com [TORRA] no nome, blindado e Anne em até 10 minutos.`);
-  // receita
-  const diaN = Number(hoje.slice(8,10)), restam = DIAS_MES - diaN + 1;
-  ins("info", "📈", "Receita do mês", `<b>${fmtK(C.medido)}</b> líquidos medidos na Hubla em ${diaN} dias. Para os R$ 523 mil que o plano prevê faltam <b>${fmtK(Math.max(P.fechamento - C.medido,0))}</b>, ou ${fmtK(Math.max(P.fechamento - C.medido,0)/Math.max(restam,1))}/dia nos ${restam} dias que restam (contando hoje).`);
   $("insights").innerHTML = out.map(o => `<div class="in ${o.cls}"><div class="ic">${o.ic}</div><div class="t"><span class="k">${o.k}</span>${o.t}</div></div>`).join("");
 }
 
@@ -1148,6 +1332,9 @@ function renderInsights(){
 function renderAlertas(){
   const A = [], T = C.T, P = PLANO, hoje = C.hoje, ontem = ontemManaus();
   const al = (sev, t, v) => A.push({sev, t, v});
+  const Rm = ritmo();
+  if (!mesFechado() && Rm.fechado && Rm.fechado >= PLANO_INI && Rm.razao != null && Rm.razao < 0.97)
+    al(Rm.razao < 0.9 ? "crit" : "warn", "Receita abaixo da meta acumulada", fmtR(Rm.medFech) + " de " + fmtR(Rm.metaFech) + " até " + ddmm(Rm.fechado) + " (" + Math.round(Rm.razao*100) + "%)");
   if (T.mes > P.teto) al("crit", "Teto do mês estourado", fmtR(T.mes) + " de R$ 110.000");
   else { const fechaEm = T.ate12 + T.extra + T.periodo + Math.max(P.disponivel - C.prev.periodo, 0);
     if (fechaEm > P.teto) al("warn", "No ritmo do plano o mês passa do teto", "fecha em " + fmtR(fechaEm) + " · " + fmtR(fechaEm - P.teto) + " acima de R$ 110.000"); }
